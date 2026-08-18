@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         PAGE 1 - WELCOME
+    ========================== -->
+
+    <section class="page active" id="home">
+
+        <div class="hearts"></div>
+
+        <div class="content">
+
+            <p class="small-title">
+                A Special Day For My Fovorite
+            </p>
+
+            <h1>
+                Happy Birthday
+                <span>Erumaa 🖤</span>
+            </h1>
+
+            <p class="description">
+                A little surprise has been created just for you...
+            </p>
+
+            <button class="main-btn" onclick="goToPage('message')">
+                Open Your Gift
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 2 - MESSAGES
+    ========================== -->
+
+    <!-- =========================
+     PAGE 2 - MESSAGES
+========================== -->
+
+<section class="page" id="message">
+
+    <div class="message-box">
+
+        <p class="step-number" id="stepNumber">
+            01 / 02
+        </p>
+
+        <h2 id="messageText">
+            This Is All About You ✨
+        </h2>
+
+        <button class="main-btn" onclick="nextMessage()">
+            Next
+        </button>
+
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- =========================
+         PAGE 3 - CELEBRATION
+    ========================== -->
+
+    <section class="page celebration" id="celebration">
+
+        <div class="lights">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="celebration-content">
+
+            <h2 id="celebrationTitle">
+                It's Your Special Day..!
+            </h2>
+
+            <p id="celebrationText">
+                Are you ready for your surprise?
+            </p>
+
+            <button class="main-btn" onclick="startCelebration()">
+                Turn On The Lights 💡
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 4 - LETTER
+    ========================== -->
+
+    <section class="page curtain-page" id="letter">
+
+        <div class="curtain left-curtain"></div>
+
+        <div class="curtain right-curtain"></div>
+
+        <div class="letter-box">
+
+            <p class="letter-small">
+                This message For You
+            </p>
+
+            <h2>
+                My Special Onee!,
+            </h2>
+
+            <p>
+                Happiesttt Birthdayy to my Special One🖤💎🌏,Alwayss bee happy and keep Smiling
+                Don't worry about anything,I will Always there for youuu🫂
+                
+            </p>
+
+            <p>
+                Thank you for being best part of my life🫀🫶🏻and
+                Your little memories makes life a little more beautiful.
+                Sorry for everything...Don't leave me at any situation🥹
+                Stay with me always,it is enough for me🤌🏻
+            </p>
+
+            <p>
+                May your birthday be filled with happiness,
+                laughter, love and countless beautiful moments.Once again "Happiest Bdayy To Youu My Last Seven Minute🧿💎"
+            </p>
+
+            <p class="last-line">
+                “If my life were a story, you would be the chapter I would never let end.🖤🌏💎🧿🥹” 
+            </p>
+
+            <button class="main-btn" onclick="goToPage('gallery')">
+                Our Memories
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 5 - GALLERY
+    ========================== -->
+
+    <section class="page gallery" id="gallery">
+
+        <div class="gallery-container">
+
+            <p class="gallery-small">
+                OUR LITTLE MEMORIES
+            </p>
+
+            <h2>
+                Moments in Time 😍
+            </h2>
+
+            <div class="gallery-grid">
+
+                <div class="photo-card">
+
+                    <img src="images1.jpg" alt="Memory 1">
+
+                    <div class="photo-text">
+                        One of our Favv Pic 🖤
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img src="images2.jpg" alt="Memory 2">
+
+                    <div class="photo-text">
+                        You make my world beautiful!💎 
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img src="images3.jpg" alt="Memory 3">
+
+                    <div class="photo-text">
+                        Beautiful memories forever!🧿
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="end-message">
+                Happy Birthdayy My Boyy,Enjoy Your Day❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

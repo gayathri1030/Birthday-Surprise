@@ -1,0 +1,812 @@
+/* ===================================
+   BASIC RESET
+=================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #080808;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* ===================================
+   PAGE
+=================================== */
+
+.page {
+    position: fixed;
+
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transform: scale(1.05);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s ease;
+
+    overflow: hidden;
+}
+
+
+.page.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ===================================
+   HOME PAGE
+=================================== */
+
+#home {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #351019 0%,
+            #150609 45%,
+            #050505 100%
+        );
+}
+
+
+.content {
+    position: relative;
+    z-index: 5;
+
+    width: 90%;
+    max-width: 900px;
+}
+
+
+.small-title {
+
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,0.6);
+
+    margin-bottom: 25px;
+}
+
+
+.content h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+
+.content h1 span {
+
+    display: block;
+
+    font-family: "Dancing Script", cursive;
+
+    color: #ff2d55;
+
+    text-shadow:
+        0 0 10px #ff2d55,
+        0 0 30px rgba(255,45,85,0.5);
+}
+
+
+.description {
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 17px;
+
+    margin-bottom: 40px;
+}
+
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.main-btn {
+
+    padding: 16px 35px;
+
+    background: transparent;
+
+    border: 1px solid #ff2d55;
+
+    color: white;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 0 10px rgba(255,45,85,0.3);
+}
+
+
+.main-btn:hover {
+
+    background: #ff2d55;
+
+    box-shadow:
+        0 0 20px #ff2d55,
+        0 0 50px rgba(255,45,85,0.5);
+
+    transform: translateY(-3px);
+}
+
+
+/* ===================================
+   FLOATING HEARTS
+=================================== */
+
+.hearts {
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #ff2d55;
+
+    font-size: 20px;
+
+    animation: floatHeart 7s linear forwards;
+
+    opacity: 0;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            scale(1.5)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ===================================
+   MESSAGE PAGE
+=================================== */
+
+#message {
+
+    background:
+        radial-gradient(
+            circle,
+            #240b12,
+            #050505
+        );
+}
+
+
+.message-box {
+
+    width: 90%;
+    max-width: 550px;
+
+    padding: 60px 40px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.6);
+}
+
+
+.step-number {
+
+    color: #ff2d55;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+}
+
+
+.message-box h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    font-weight: 500;
+
+    margin-bottom: 35px;
+}
+
+
+/* ===================================
+   DOTS
+=================================== */
+
+.dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+.dot {
+
+    width: 8px;
+    height: 8px;
+
+    background: rgba(255,255,255,0.2);
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+
+.dot.active {
+
+    background: #ff2d55;
+
+    transform: scale(1.5);
+
+    box-shadow:
+        0 0 10px #ff2d55;
+}
+
+
+/* ===================================
+   CELEBRATION
+=================================== */
+
+#celebration {
+
+    background: #020202;
+}
+
+
+#celebration.light-on {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #401018,
+            #0b0305
+        );
+}
+
+
+.celebration-content {
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.celebration-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 6vw, 65px);
+
+    margin-bottom: 20px;
+}
+
+
+.celebration-content p {
+
+    color: rgba(255,255,255,0.6);
+
+    margin-bottom: 35px;
+}
+
+
+/* ===================================
+   FAIRY LIGHTS
+=================================== */
+
+.lights {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 130px;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: flex-start;
+
+    padding-top: 30px;
+}
+
+
+.lights span {
+
+    width: 17px;
+    height: 25px;
+
+    background: #222;
+
+    border-radius: 50%;
+
+    transition: 1s;
+}
+
+
+.light-on .lights span {
+
+    background: #ffde6b;
+
+    box-shadow:
+        0 0 15px #ffde6b,
+        0 0 35px #ffde6b;
+
+    animation: bulbFlash 1s infinite alternate;
+}
+
+
+@keyframes bulbFlash {
+
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ===================================
+   CURTAIN PAGE
+=================================== */
+
+#letter {
+
+    background:
+        radial-gradient(
+            circle,
+            #1b1b1b,
+            #000
+        );
+}
+
+
+.curtain {
+
+    position: absolute;
+
+    top: 0;
+
+    width: 51%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #760000 0px,
+            #4c0000 30px,
+            #680000 60px
+        );
+
+    z-index: 10;
+
+    transition:
+        transform 2.5s
+        cubic-bezier(.645,.045,.355,1);
+
+    box-shadow:
+        inset 0 0 100px rgba(0,0,0,0.8);
+}
+
+
+.left-curtain {
+
+    left: 0;
+
+    border-right: 4px solid #d4af37;
+}
+
+
+.right-curtain {
+
+    right: 0;
+
+    border-left: 4px solid #d4af37;
+}
+
+
+#letter.open .left-curtain {
+
+    transform:
+        translateX(-100%)
+        skewY(-5deg);
+}
+
+
+#letter.open .right-curtain {
+
+    transform:
+        translateX(100%)
+        skewY(5deg);
+}
+
+
+/* ===================================
+   LETTER
+=================================== */
+
+.letter-box {
+
+    width: 90%;
+    max-width: 700px;
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.letter-small {
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.5);
+
+    margin-bottom: 20px;
+}
+
+
+.letter-box h2 {
+
+    font-family: "Dancing Script", cursive;
+
+    color: #ff2d55;
+
+    font-size: clamp(40px, 6vw, 60px);
+
+    margin-bottom: 25px;
+}
+
+
+.letter-box p {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.75);
+
+    margin-bottom: 15px;
+}
+
+
+.letter-box .last-line {
+
+    color: white;
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 25px;
+
+    margin: 25px 0;
+}
+
+
+/* ===================================
+   GALLERY
+=================================== */
+
+#gallery {
+
+    position: fixed;
+
+    display: block;
+
+    overflow-y: auto;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #250910,
+            #050505 60%
+        );
+}
+
+
+.gallery-container {
+
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+.gallery-small {
+
+    color: rgba(255,255,255,0.5);
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 15px;
+}
+
+
+.gallery-container h2 {
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: clamp(45px, 7vw, 75px);
+
+    color: #ff2d55;
+
+    margin-bottom: 50px;
+
+    text-shadow:
+        0 0 20px rgba(255,45,85,0.5);
+}
+
+
+/* ===================================
+   PHOTO GRID
+=================================== */
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+
+.photo-card {
+
+    height: 400px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #111;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.5s;
+}
+
+
+.photo-card:hover {
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 50px rgba(255,45,85,0.3);
+}
+
+
+.photo-card img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s;
+}
+
+
+.photo-card:hover img {
+
+    transform: scale(1.1);
+}
+
+
+.photo-text {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.9)
+        );
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 24px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: 0.4s;
+}
+
+
+.photo-card:hover .photo-text {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.end-message {
+
+    margin-top: 60px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-family: "Dancing Script", cursive;
+
+    font-size: 25px;
+}
+
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width: 600px) {
+
+    .small-title {
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .description {
+
+        font-size: 14px;
+    }
+
+
+    .message-box {
+
+        padding: 45px 20px;
+    }
+
+
+    .letter-box {
+
+        padding: 30px 20px;
+    }
+
+
+    .letter-box p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    .photo-card {
+
+        height: 350px;
+    }
+
+}
